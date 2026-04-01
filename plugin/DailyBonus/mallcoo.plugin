@@ -1,14 +1,14 @@
 #!name=恒越广场签到
 #!desc=恒越广场自动签到脚本
-#!category=签到模块
 #!author=MoonYuki
+#!tag=自动签到
 
 [Script]
 # 创建恒越广场签到脚本
-恒越广场签到=type=cron,cronexp="0 0 7 * * ?",script-path=https://raw.githubusercontent.com/MoonYuki/Surge/main/DailyBonus/Mallcoo/mallcoo.js
+cron "0 0 7 * * ?" script-path=https://raw.githubusercontent.com/MoonYuki/Surge/main/DailyBonus/Mallcoo/mallcoo.js, timeout=60, tag=恒越广场签到
 
 # 获取恒越广场会话
-获取恒越广场会话=type=http-request,requires-body=true,pattern=^https?:\/\/m\.mallcoo\.cn\/api\/user\/User\/GetCheckinDetail$,script-path=https://raw.githubusercontent.com/MoonYuki/Surge/main/DailyBonus/Mallcoo/mallcoo.js
+http-request ^https?:\/\/m\.mallcoo\.cn\/api\/user\/User\/GetCheckinDetail$ script-path=https://raw.githubusercontent.com/MoonYuki/Surge/main/DailyBonus/Mallcoo/mallcoo.js, requires-body=true, timeout=60, tag=获取恒越广场会话
 
 [MITM]
-hostname = %APPEND% m.mallcoo.cn
+m.mallcoo.cn
