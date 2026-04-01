@@ -1,0 +1,10 @@
+#!name = B612咔叽
+#!desc = B612咔叽会员解锁
+#!tag = 解锁插件
+#!author = moonyuki
+
+[Rewrite]
+^https?:\/\/user-kaji-api\.b612kaji\.com\/v1\/purchase\/subscription\/subscriber\/status.*?$ response-body-json-jq '.result.products += [{"managed": false, "status": "ACTIVE", "startDate": 1640573194000, "productId": "com.campmobile.snowcamera.vip.oneyear", "expireDate": 4072257165000}] | .result.activated = true'
+
+[MITM]
+hostname = user-kaji-api.b612kaji.com
