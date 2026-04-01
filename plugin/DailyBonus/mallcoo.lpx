@@ -1,7 +1,7 @@
 #!name=恒越广场签到
 #!desc=恒越广场自动签到脚本
 #!author=MoonYuki
-#!category=自动签到
+#!tag=自动签到
 
 [Script]
 # 创建恒越广场签到脚本
