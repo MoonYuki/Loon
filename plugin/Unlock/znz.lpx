@@ -1,6 +1,6 @@
 #!name = 指南针GPS
 #!desc = 指南针GPS解锁
-#!category = 解锁插件
+#!tag = 解锁插件
 #!author=MoonYuki
 
 [Rewrite]
