@@ -5,10 +5,10 @@
 
 [Argument]
 enable=switch, true, tag=启用自动筛选, desc=开启后自动修改搜索参数，关闭则保持网页默认状态
-jobCode=string, "27", tag=职业代码, desc=例如 27 代表祭司
-minLevel=string, "81", tag=最低等级, desc=筛选的最低等级
-maxLevel=string, "120", tag=最高等级, desc=筛选的最高等级
-maxPrice=string, "500", tag=最高价格, desc=商品最高价格限制（元）
+jobCode=input, "27", tag=职业代码, desc=例如 27 代表祭司
+minLevel=input, "81", tag=最低等级, desc=筛选的最低等级
+maxLevel=input, "120", tag=最高等级, desc=筛选的最高等级
+maxPrice=input, "500", tag=最高价格, desc=商品最高价格限制（元）
 
 [Script]
 request if ${url} ~= /^https:\/\/www\.gmmsj\.com\/api\/consigntradeapi\/goods\/searchgoodslistV2/i then script("https://raw.githubusercontent.com/MoonYuki/Loon/refs/heads/main/Script/gmm/gmm.js", {${enable}, ${jobCode}, ${minLevel}, ${maxLevel}, ${maxPrice}}) with tag="G买卖自动筛选注入", timeout=5
